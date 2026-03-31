@@ -1,0 +1,153 @@
+'use client';
+
+import { useState } from 'react';
+import Link from 'next/link';
+
+const questions = [
+  { id: 1, text: 'Apakah perdarahan sangat banyak (pembalut penuh < 1 jam)?', category: 'red' },
+  { id: 2, text: 'Apakah darah nifas berbau busuk?', category: 'red' },
+  { id: 3, text: 'Apakah ibu mengalami demam ≥ 38°C?', category: 'red' },
+  { id: 4, text: 'Apakah nyeri perut sangat hebat?', category: 'red' },
+  { id: 5, text: 'Apakah pusing berat atau lemas ekstrem?', category: 'red' },
+  { id: 6, text: 'Apakah luka jahitan bernanah atau sangat nyeri?', category: 'red' },
+  { id: 7, text: 'Apakah nyeri luka ringan?', category: 'yellow' },
+  { id: 8, text: 'Apakah perdarahan mulai meningkat?', category: 'yellow' },
+];
+
+export default function NifasScreening() {
+  const [answers, setAnswers] = useState({});
+  const [result, setResult] = useState(null);
+
+  const handleSelect = (idx, value) => {
+    setAnswers(prev => ({ ...prev, [idx]: value }));
+  };
+
+  const calculateResult = () => {
+    // If not all answered, alert
+    if (Object.keys(answers).length < questions.length) {
+      alert('Mohon jawab semua pertanyaan terlebih dahulu.');
+      return;
+    }
+
+    let isRed = false;
+    let isYellow = false;
+    let redReasons = [];
+    let yellowReasons = [];
+
+    questions.forEach((q, i) => {
+      if (answers[i] === 'Ya') {
+        if (q.category === 'red') {
+          isRed = true;
+          redReasons.push(q.text);
+        } else if (q.category === 'yellow') {
+          isYellow = true;
+          yellowReasons.push(q.text);
+        }
+      }
+    });
+
+    if (isRed) {
+      setResult({ status: 'danger', reasons: redReasons });
+    } else if (isYellow) {
+      setResult({ status: 'warning', reasons: yellowReasons });
+    } else {
+      setResult({ status: 'normal', reasons: [] });
+    }
+  };
+
+  if (result) {
+    return (
+      <div className="glass-card animate-fade-in" style={{ maxWidth: '600px', margin: '0 auto' }}>
+        <h2 className="text-center mb-4">Hasil Skrining Asuhan Nifas</h2>
+        
+        {result.status === 'normal' && (
+          <div className="status-normal" style={{ padding: '20px', borderRadius: '15px', marginBottom: '20px' }}>
+            <h3 style={{ fontSize: '1.5rem', marginBottom: '10px' }}>🟢 Kondisi Anda Normal</h3>
+            <p><strong>Interpretasi Klinis:</strong> Kondisi ibu menunjukkan proses pemulihan fisiologis masa nifas tanpa tanda komplikasi. Kondisi Anda masih dalam batas normal masa nifas.</p>
+            <p><strong>Rekomendasi Tindakan:</strong></p>
+            <ul style={{ marginLeft: '20px', marginBottom: '10px' }}>
+              <li>Istirahat cukup.</li>
+              <li>Jaga kebersihan area genital.</li>
+              <li>Lanjutkan perawatan diri mandiri di rumah seperti biasa.</li>
+              <li>Lakukan kunjungan nifas sesuai jadwal tenaga kesehatan.</li>
+            </ul>
+            <p style={{ fontSize: '0.9rem', opacity: 0.9 }}><em>Edukasi: Pemantauan rutin penting karena masa nifas (0-42 hari) merupakan periode risiko komplikasi.</em></p>
+          </div>
+        )}
+
+        {result.status === 'warning' && (
+          <div className="status-warning" style={{ padding: '20px', borderRadius: '15px', marginBottom: '20px' }}>
+            <h3 style={{ fontSize: '1.5rem', marginBottom: '10px' }}>🟡 Perlu Perhatian</h3>
+            <p><strong>Interpretasi Klinis:</strong> Terdapat keluhan ringan yang perlu dipantau. Ditemukan gejala ringan yang dapat mengarah ke gangguan awal masa nifas.</p>
+            <p><strong>Dasar Penilaian:</strong> Anda melaporkan gejala terkait ({result.reasons.join(', ')}).</p>
+            <p><strong>Rekomendasi Tindakan:</strong></p>
+            <ul style={{ marginLeft: '20px', marginBottom: '10px' }}>
+              <li>Istirahat lebih banyak dan kurangi aktivitas berat.</li>
+              <li>Jaga kebersihan luka (jika ada).</li>
+              <li>Observasi pantau kondisi selama 1-2 hari ke depan.</li>
+              <li>Konsultasi ke bidan / tenaga kesehatan jika tidak membaik atau semakin berat.</li>
+            </ul>
+             <p style={{ fontSize: '0.9rem', opacity: 0.9 }}><em>Edukasi: Komplikasi nifas seperti infeksi atau subinvolusi dapat berkembang secara bertahap, pantau terus gejala Anda.</em></p>
+          </div>
+        )}
+
+        {result.status === 'danger' && (
+          <div className="status-danger" style={{ padding: '20px', borderRadius: '15px', marginBottom: '20px' }}>
+            <h3 style={{ fontSize: '1.5rem', marginBottom: '10px' }}>🚨 Tanda Bahaya</h3>
+            <p><strong>Interpretasi Klinis:</strong> Kondisi Anda memerlukan penanganan SEGERA. Gejala mengarah pada komplikasi serius masa nifas.</p>
+            <p><strong>Dasar Penilaian:</strong> Terdapat tanda bahaya kuat ({result.reasons.join(', ')}).</p>
+            <p><strong>Rekomendasi Tindakan:</strong></p>
+            <ul style={{ marginLeft: '20px', marginBottom: '10px', fontWeight: 'bold' }}>
+              <li>Segera ke fasilitas kesehatan secepatnya!</li>
+              <li>Hubungi bidan atau dokter kandungan Anda.</li>
+              <li>Jangan menunda pemeriksaan.</li>
+            </ul>
+             <p style={{ fontSize: '0.9rem', opacity: 0.9 }}><em>Edukasi: Perdarahan postpartum, infeksi, dan hipertensi merupakan penyebab utama komplikasi serius yang membutuhkan intervensi medis segera.</em></p>
+          </div>
+        )}
+
+        <div style={{ display: 'flex', gap: '15px', justifyContent: 'center' }}>
+          <button className="btn btn-outline" onClick={() => { setResult(null); setAnswers({}); }}>Ulangi Skrining</button>
+          <Link href="/" className="btn btn-primary">Kembali ke Beranda</Link>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="animate-fade-in" style={{ maxWidth: '700px', margin: '0 auto' }}>
+      <div className="text-center mb-4">
+        <h1 style={{ color: 'var(--primary)' }}>Skrining Asuhan Nifas 🩺</h1>
+        <p style={{ color: 'var(--text-light)' }}>Jawablah pertanyaan berikut sesuai dengan kondisi yang Anda rasakan saat ini sejujur-jujurnya.</p>
+      </div>
+
+      <div className="glass-card" style={{ display: 'flex', flexDirection: 'column', gap: '25px' }}>
+        {questions.map((q, i) => (
+          <div key={q.id} style={{ paddingBottom: '20px', borderBottom: '1px solid var(--glass-border)' }}>
+            <p style={{ fontWeight: 500, marginBottom: '15px', fontSize: '1.1rem' }}>{i + 1}. {q.text}</p>
+            <div style={{ display: 'flex', gap: '15px' }}>
+              <button 
+                className={`btn ${answers[i] === 'Ya' ? 'btn-primary' : 'btn-outline'}`} 
+                onClick={() => handleSelect(i, 'Ya')}
+                style={{ flex: 1 }}
+              >
+                Ya
+              </button>
+              <button 
+                className={`btn ${answers[i] === 'Tidak' ? 'btn-primary' : 'btn-outline'}`} 
+                onClick={() => handleSelect(i, 'Tidak')}
+                style={{ flex: 1, backgroundColor: answers[i] === 'Tidak' ? '#86EFAC' : '', borderColor: answers[i] === 'Tidak' ? '#86EFAC' : '', color: answers[i] === 'Tidak' ? '#137333' : '' }}
+              >
+                Tidak
+              </button>
+            </div>
+          </div>
+        ))}
+
+        <button className="btn btn-primary" style={{ width: '100%', padding: '15px', fontSize: '1.1rem', marginTop: '10px' }} onClick={calculateResult}>
+          Lihat Hasil Skrining
+        </button>
+      </div>
+    </div>
+  );
+}

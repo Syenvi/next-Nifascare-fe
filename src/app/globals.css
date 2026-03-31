@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --primary: #FF85A2;       /* Soft pink */
+  --primary-hover: #ff6b8f;
+  --secondary: #A3D8F4;     /* Calm blue */
+  --bg-color: #FAFAFA;      /* Very light gray/white */
+  --text-main: #333333;
+  --text-light: #666666;
+  
+  /* Status Colors */
+  --success-bg: #E6F4EA;
+  --success-border: #CEEAD6;
+  --success-text: #137333;
+  
+  --warning-bg: #FEF7E0;
+  --warning-border: #FEEFC3;
+  --warning-text: #B06000;
+  
+  --danger-bg: #FCE8E6;
+  --danger-border: #FAD2CF;
+  --danger-text: #C5221F;
+  
+  --white: #ffffff;
+  --card-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  --glass-bg: rgba(255, 255, 255, 0.85);
+  --glass-border: rgba(255, 255, 255, 0.2);
+  --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  line-height: 1.6;
+  overflow-x: hidden;
+  /* subtle maternal gradient background */
+  background-image: radial-gradient(circle at 10% 20%, rgba(255, 133, 162, 0.05) 0%, transparent 40%),
+                    radial-gradient(circle at 90% 80%, rgba(163, 216, 244, 0.1) 0%, transparent 40%);
+  background-attachment: fixed;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1, h2, h3, h4, h5 {
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Utils */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.text-center { text-align: center; }
+.mb-1 { margin-bottom: 0.5rem; }
+.mb-2 { margin-bottom: 1rem; }
+.mb-3 { margin-bottom: 1.5rem; }
+.mb-4 { margin-bottom: 2rem; }
+.mt-4 { margin-top: 2rem; }
+
+/* Status Modules */
+.status-normal { background: var(--success-bg); border: 1px solid var(--success-border); color: var(--success-text); }
+.status-warning { background: var(--warning-bg); border: 1px solid var(--warning-border); color: var(--warning-text); }
+.status-danger { background: var(--danger-bg); border: 1px solid var(--danger-border); color: var(--danger-text); }
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  border-radius: 50px;
+  font-weight: 500;
+  font-family: 'Inter', sans-serif;
+  cursor: pointer;
+  transition: var(--transition);
+  border: none;
+  font-size: 1rem;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: white;
+  box-shadow: 0 4px 14px rgba(255, 133, 162, 0.4);
+}
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 133, 162, 0.6);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+}
+.btn-outline:hover {
+  background-color: var(--primary);
+  color: white;
+}
+
+/* Cards (Glassmorphism) */
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--card-shadow);
+  border-radius: 20px;
+  padding: 30px;
+  transition: var(--transition);
+}
+
+.glass-card:hover {
+  box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+}
