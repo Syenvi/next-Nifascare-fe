@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const questions = [
   { id: 1, text: 'Apakah perdarahan sangat banyak (pembalut penuh < 1 jam)?', category: 'red' },
@@ -57,8 +58,12 @@ export default function NifasScreening() {
 
   if (result) {
     return (
-      <div className="glass-card animate-fade-in" style={{ maxWidth: '600px', margin: '0 auto' }}>
+      <div className="glass-card animate-fade-in" style={{ maxWidth: '600px', margin: '0 auto', padding: '40px', background: 'rgba(255, 255, 255, 0.4)', backdropFilter: 'blur(16px)', WebkitBackdropFilter: 'blur(16px)', border: '1px solid rgba(255, 255, 255, 0.5)', borderRadius: '24px', boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.1)' }}>
         <h2 className="text-center mb-4">Hasil Skrining Asuhan Nifas</h2>
+        
+        <div style={{ position: 'relative', width: '100%', height: '250px', borderRadius: '16px', overflow: 'hidden', marginBottom: '25px', boxShadow: '0 4px 15px rgba(0,0,0,0.1)' }}>
+          <Image src="/placeholder-nifas-result.jpg" alt="Ilustrasi Hasil" fill style={{ objectFit: 'cover' }} />
+        </div>
         
         {result.status === 'normal' && (
           <div className="status-normal" style={{ padding: '20px', borderRadius: '15px', marginBottom: '20px' }}>
@@ -115,13 +120,16 @@ export default function NifasScreening() {
   }
 
   return (
-    <div className="animate-fade-in" style={{ maxWidth: '700px', margin: '0 auto' }}>
-      <div className="text-center mb-4">
+    <div className="animate-fade-in" style={{ maxWidth: '750px', margin: '0 auto' }}>
+      <div className="text-center mb-4" style={{ padding: '20px', background: 'rgba(255, 255, 255, 0.3)', backdropFilter: 'blur(10px)', borderRadius: '20px', border: '1px solid rgba(255, 255, 255, 0.4)', boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.05)' }}>
         <h1 style={{ color: 'var(--primary)' }}>Skrining Asuhan Nifas 🩺</h1>
-        <p style={{ color: 'var(--text-light)' }}>Jawablah pertanyaan berikut sesuai dengan kondisi yang Anda rasakan saat ini sejujur-jujurnya.</p>
+        <p style={{ color: 'var(--text-light)', marginTop: '10px' }}>Jawablah pertanyaan berikut sesuai dengan kondisi yang Anda rasakan saat ini sejujur-jujurnya.</p>
       </div>
 
-      <div className="glass-card" style={{ display: 'flex', flexDirection: 'column', gap: '25px' }}>
+      <div className="glass-card" style={{ display: 'flex', flexDirection: 'column', gap: '25px', padding: '40px', background: 'rgba(255, 255, 255, 0.4)', backdropFilter: 'blur(16px)', WebkitBackdropFilter: 'blur(16px)', border: '1px solid rgba(255, 255, 255, 0.5)', borderRadius: '24px', boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.1)' }}>
+        <div style={{ position: 'relative', width: '100%', height: '200px', borderRadius: '16px', overflow: 'hidden', marginBottom: '10px', boxShadow: '0 4px 15px rgba(0,0,0,0.1)' }}>
+          <Image src="/placeholder-nifas-intro.jpg" alt="Ilustrasi Nifas" fill priority style={{ objectFit: 'cover' }} />
+        </div>
         {questions.map((q, i) => (
           <div key={q.id} style={{ paddingBottom: '20px', borderBottom: '1px solid var(--glass-border)' }}>
             <p style={{ fontWeight: 500, marginBottom: '15px', fontSize: '1.1rem' }}>{i + 1}. {q.text}</p>
