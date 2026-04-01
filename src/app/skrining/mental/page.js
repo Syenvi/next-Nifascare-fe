@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const questions = [
   { id: 1, text: 'Saya masih bisa tertawa dan melihat sisi lucu dari banyak hal', reverse: true },
@@ -62,8 +63,12 @@ export default function MentalScreening() {
 
   if (result) {
     return (
-      <div className="glass-card animate-fade-in" style={{ maxWidth: '600px', margin: '0 auto' }}>
+      <div className="glass-card animate-fade-in" style={{ maxWidth: '600px', margin: '0 auto', padding: '40px', background: 'rgba(255, 255, 255, 0.4)', backdropFilter: 'blur(16px)', WebkitBackdropFilter: 'blur(16px)', border: '1px solid rgba(255, 255, 255, 0.5)', borderRadius: '24px', boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.1)' }}>
         <h2 className="text-center mb-4">Hasil Skrining Postpartum Blues (EPDS)</h2>
+
+        <div style={{ position: 'relative', width: '100%', height: '250px', borderRadius: '16px', overflow: 'hidden', marginBottom: '25px', boxShadow: '0 4px 15px rgba(0,0,0,0.1)' }}>
+          <Image src="/placeholder-mental-result.jpg" alt="Ilustrasi Hasil" fill style={{ objectFit: 'cover' }} />
+        </div>
 
         {result.isQ10Triggered && (
           <div style={{ backgroundColor: '#ffcccc', border: '2px solid #ff4d4d', color: '#cc0000', padding: '15px', borderRadius: '10px', marginBottom: '20px', fontWeight: 'bold' }}>
@@ -123,13 +128,16 @@ export default function MentalScreening() {
   }
 
   return (
-    <div className="animate-fade-in" style={{ maxWidth: '800px', margin: '0 auto' }}>
-      <div className="text-center mb-4">
+    <div className="animate-fade-in" style={{ maxWidth: '850px', margin: '0 auto' }}>
+      <div className="text-center mb-4" style={{ padding: '20px', background: 'rgba(255, 255, 255, 0.3)', backdropFilter: 'blur(10px)', borderRadius: '20px', border: '1px solid rgba(255, 255, 255, 0.4)', boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.05)' }}>
         <h1 style={{ color: 'var(--primary)' }}>Skrining Postpartum Blues 🧠</h1>
-        <p style={{ color: 'var(--text-light)' }}>Dalam kurun waktu tujuh hari (1 minggu) terakhir ini secara jujur, manakah skala di bawah ini yang paling mewakili tentang perasaan dan pemikiran diri anda selama ini?</p>
+        <p style={{ color: 'var(--text-light)', marginTop: '10px' }}>Dalam kurun waktu tujuh hari (1 minggu) terakhir ini secara jujur, manakah skala di bawah ini yang paling mewakili tentang perasaan dan pemikiran diri anda selama ini?</p>
       </div>
 
-      <div className="glass-card" style={{ display: 'flex', flexDirection: 'column', gap: '30px' }}>
+      <div className="glass-card" style={{ display: 'flex', flexDirection: 'column', gap: '30px', padding: '40px', background: 'rgba(255, 255, 255, 0.4)', backdropFilter: 'blur(16px)', WebkitBackdropFilter: 'blur(16px)', border: '1px solid rgba(255, 255, 255, 0.5)', borderRadius: '24px', boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.1)' }}>
+        <div style={{ position: 'relative', width: '100%', height: '200px', borderRadius: '16px', overflow: 'hidden', marginBottom: '10px', boxShadow: '0 4px 15px rgba(0,0,0,0.1)' }}>
+          <Image src="/placeholder-mental-intro.jpg" alt="Ilustrasi Mental Assessment" fill priority style={{ objectFit: 'cover' }} />
+        </div>
         {questions.map((q, i) => (
           <div key={q.id} style={{ paddingBottom: '25px', borderBottom: '1px solid var(--glass-border)' }}>
             <p style={{ fontWeight: 500, marginBottom: '15px', fontSize: '1.1rem' }}>{i + 1}. {q.text}</p>

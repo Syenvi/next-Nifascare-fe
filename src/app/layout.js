@@ -1,8 +1,8 @@
-import { Inter } from 'next/font/google';
+import { Plus_Jakarta_Sans } from 'next/font/google';
 import './globals.css';
 import Navbar from '../components/ui/Navbar';
 
-const inter = Inter({ subsets: ['latin'] });
+const plusJakartaSans = Plus_Jakarta_Sans({ subsets: ['latin'] });
 
 export const metadata = {
   title: 'Nifas & ASI Check | Skrining Mandiri Ibu',
@@ -12,7 +12,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="id">
-      <body className={inter.className}>
+      <body className={plusJakartaSans.className}>
         <Navbar />
         <main className="container animate-fade-in" style={{ padding: '40px 20px', minHeight: '80vh' }}>
           {children}
