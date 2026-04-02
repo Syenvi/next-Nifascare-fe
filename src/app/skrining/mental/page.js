@@ -129,9 +129,10 @@ export default function MentalScreening() {
 
   return (
     <div className="animate-fade-in" style={{ maxWidth: '850px', margin: '0 auto' }}>
-      <div className="text-center mb-4" style={{ padding: '20px', background: 'rgba(255, 255, 255, 0.3)', backdropFilter: 'blur(10px)', borderRadius: '20px', border: '1px solid rgba(255, 255, 255, 0.4)', boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.05)' }}>
+      <div className="text-center mb-4">
+        <img src="/assets/mental.png" alt="Ilustrasi Kesehatan Mental" style={{ width: '100%', maxWidth: '300px', borderRadius: '20px', marginBottom: '20px', boxShadow: 'var(--card-shadow)' }} />
         <h1 style={{ color: 'var(--primary)' }}>Skrining Postpartum Blues 🧠</h1>
-        <p style={{ color: 'var(--text-light)', marginTop: '10px' }}>Dalam kurun waktu tujuh hari (1 minggu) terakhir ini secara jujur, manakah skala di bawah ini yang paling mewakili tentang perasaan dan pemikiran diri anda selama ini?</p>
+        <p style={{ color: 'var(--text-light)' }}>Dalam kurun waktu tujuh hari (1 minggu) terakhir ini secara jujur, manakah skala di bawah ini yang paling mewakili tentang perasaan dan pemikiran diri anda selama ini?</p>
       </div>
 
       <div className="glass-card" style={{ display: 'flex', flexDirection: 'column', gap: '30px', padding: '40px', background: 'rgba(255, 255, 255, 0.4)', backdropFilter: 'blur(16px)', WebkitBackdropFilter: 'blur(16px)', border: '1px solid rgba(255, 255, 255, 0.5)', borderRadius: '24px', boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.1)' }}>

@@ -121,9 +121,10 @@ export default function NifasScreening() {
 
   return (
     <div className="animate-fade-in" style={{ maxWidth: '750px', margin: '0 auto' }}>
-      <div className="text-center mb-4" style={{ padding: '20px', background: 'rgba(255, 255, 255, 0.3)', backdropFilter: 'blur(10px)', borderRadius: '20px', border: '1px solid rgba(255, 255, 255, 0.4)', boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.05)' }}>
+      <div className="text-center mb-4">
+        <img src="/assets/nifas.png" alt="Ilustrasi Asuhan Nifas" style={{ width: '100%', maxWidth: '300px', borderRadius: '20px', marginBottom: '20px', boxShadow: 'var(--card-shadow)' }} />
         <h1 style={{ color: 'var(--primary)' }}>Skrining Asuhan Nifas 🩺</h1>
-        <p style={{ color: 'var(--text-light)', marginTop: '10px' }}>Jawablah pertanyaan berikut sesuai dengan kondisi yang Anda rasakan saat ini sejujur-jujurnya.</p>
+        <p style={{ color: 'var(--text-light)' }}>Jawablah pertanyaan berikut sesuai dengan kondisi yang Anda rasakan saat ini sejujur-jujurnya.</p>
       </div>
 
       <div className="glass-card" style={{ display: 'flex', flexDirection: 'column', gap: '25px', padding: '40px', background: 'rgba(255, 255, 255, 0.4)', backdropFilter: 'blur(16px)', WebkitBackdropFilter: 'blur(16px)', border: '1px solid rgba(255, 255, 255, 0.5)', borderRadius: '24px', boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.1)' }}>

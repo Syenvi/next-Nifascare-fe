@@ -12,7 +12,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="id">
-      <body className={plusJakartaSans.className}>
+      <body className={plusJakartaSans.className} suppressHydrationWarning>
         <Navbar />
         <main className="container animate-fade-in" style={{ padding: '40px 20px', minHeight: '80vh' }}>
           {children}
