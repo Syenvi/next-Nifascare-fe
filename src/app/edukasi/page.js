@@ -15,10 +15,10 @@ export default function Edukasi() {
           <h2 style={{ color: 'var(--primary)', marginBottom: '15px', display: 'flex', alignItems: 'center', gap: '10px' }}>
             <span>🩺</span> Perubahan Normal Masa Nifas
           </h2>
-          <p>Masa nifas berlangsung selama kurang lebih 40-42 hari. Beberapa perubahan tubuh yang **sangat normal** dan tidak perlu terlalu dikhawatirkan, antara lain:</p>
+          <p>Masa nifas berlangsung selama kurang lebih 40-42 hari. Beberapa perubahan tubuh yang sangat normal dan tidak perlu terlalu dikhawatirkan, antara lain:</p>
           <ul style={{ marginLeft: '20px', marginTop: '10px', color: 'var(--text-light)' }}>
             <li><strong>Lochia (Darah Nifas):</strong> Darah nifas akan berubah warna dari merah segar di hari pertama menjadi kecoklatan, kuning, hingga keputihan seiring berjalannya waktu.</li>
-            <li><strong>Mulas:</strong> Rahing sedang berusaha kembali ke ukuran semula sebelum hamil, sehingga perut sering terasa mulas seperti saat haid (terutama saat menyusui).</li>
+            <li><strong>Mulas:</strong> Rahim sedang berusaha kembali ke ukuran semula sebelum hamil, sehingga perut sering terasa mulas seperti saat haid (terutama saat menyusui).</li>
             <li><strong>Keringat Berlebih:</strong> Tubuh sedang mengeluarkan cairan ekstra yang tertahan selama masa kehamilan.</li>
           </ul>
         </div>

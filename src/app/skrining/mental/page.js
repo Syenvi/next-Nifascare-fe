@@ -6,16 +6,16 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 const questions = [
-  { id: 1, text: 'Saya masih bisa tertawa dan melihat sisi lucu dari banyak hal', reverse: true },
-  { id: 2, text: 'Saya merasa bahagia atau menatap hari dengan penuh harapan', reverse: true },
-  { id: 3, text: 'Saya menyalahkan diri sendiri secara berlebihan jika ada sesuatu yang tidak berjalan sesuai rencana', reverse: false },
-  { id: 4, text: 'Saya merasa sangat cemas atau sangat khawatir akan suatu hal tanpa alasan yang jelas', reverse: false },
-  { id: 5, text: 'Saya merasa sangat ketakutan atau merasa panik', reverse: false },
-  { id: 6, text: 'Saya merasa keadaan yang terjadi di sekitar saat ini membuat saya sangat kewalahan atau beban berat', reverse: false },
-  { id: 7, text: 'Saya sangat sulit tidur dimalam hari karena terus merasa sangat sedih', reverse: false },
-  { id: 8, text: 'Saya merasa gelisah, sedih, dan sangat merana', reverse: false },
-  { id: 9, text: 'Saya sering dan lebih mudah menangis tersedu-sedu', reverse: false },
-  { id: 10, text: 'Saya pernah memiliki pikiran atau terlintas untuk menyakiti diri saya sendiri atau bayi yang di kandungan saya', reverse: false },
+  { id: 1, text: 'Saya masih bisa tertawa dan melihat sisi lucu dari banyak hal?', reverse: true },
+  { id: 2, text: 'Saya merasa bahagia atau menatap hari dengan penuh harapan?', reverse: true },
+  { id: 3, text: 'Saya menyalahkan diri sendiri secara berlebihan jika ada sesuatu yang tidak berjalan sesuai rencana?', reverse: false },
+  { id: 4, text: 'Saya merasa sangat cemas atau sangat khawatir akan suatu hal tanpa alasan yang jelas?', reverse: false },
+  { id: 5, text: 'Saya merasa sangat ketakutan atau merasa panik?', reverse: false },
+  { id: 6, text: 'Saya merasa keadaan yang terjadi di sekitar saat ini membuat saya sangat kewalahan atau beban berat?', reverse: false },
+  { id: 7, text: 'Saya sangat sulit tidur dimalam hari karena terus merasa sangat sedih?', reverse: false },
+  { id: 8, text: 'Saya merasa gelisah, sedih, dan sangat merana?', reverse: false },
+  { id: 9, text: 'Saya sering dan lebih mudah menangis tersedu-sedu?', reverse: false },
+  { id: 10, text: 'Saya pernah memiliki pikiran atau terlintas untuk menyakiti diri saya sendiri atau bayi saya?', reverse: false },
 ];
 
 const scaleOptions = [
