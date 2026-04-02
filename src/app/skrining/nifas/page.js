@@ -131,6 +131,15 @@ export default function NifasScreening() {
       </div>
 
       <div className="glass-card" style={{ display: 'flex', flexDirection: 'column', gap: '25px', padding: '40px', background: 'rgba(255, 255, 255, 0.4)', backdropFilter: 'blur(16px)', WebkitBackdropFilter: 'blur(16px)', border: '1px solid rgba(255, 255, 255, 0.5)', borderRadius: '24px', boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.1)' }}>
+        {/* Progress Bar */}
+        <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '-10px', color: 'var(--text-light)', fontSize: '0.9rem', fontWeight: 500 }}>
+          <span>Progres Pengisian</span>
+          <span>{Math.round((Object.keys(answers).length / questions.length) * 100)}%</span>
+        </div>
+        <div className="progress-container">
+          <div className="progress-bar" style={{ width: `${Math.round((Object.keys(answers).length / questions.length) * 100)}%` }}></div>
+        </div>
+
         <div style={{ position: 'relative', width: '100%', aspectRatio: '4/3', borderRadius: '16px', overflow: 'hidden', marginBottom: '20px', boxShadow: '0 4px 15px rgba(0,0,0,0.1)' }}>
           <Image src="/assets/nifas.png" alt="Ilustrasi Nifas" fill priority style={{ objectFit: 'cover' }} />
         </div>

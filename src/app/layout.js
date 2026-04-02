@@ -13,6 +13,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="id">
       <body className={plusJakartaSans.className} suppressHydrationWarning>
+        <div className="blob-container">
+          <div className="blob blob-1"></div>
+          <div className="blob blob-2"></div>
+          <div className="blob blob-3"></div>
+        </div>
         <Navbar />
         <main className="container animate-fade-in" style={{ padding: '40px 20px', minHeight: '80vh' }}>
           {children}
