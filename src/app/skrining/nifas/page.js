@@ -122,7 +122,7 @@ export default function NifasScreening() {
   return (
     <div className="animate-fade-in" style={{ maxWidth: '750px', margin: '0 auto' }}>
       <div className="text-center mb-4">
-        <img src="/assets/nifas.png" alt="Ilustrasi Asuhan Nifas" style={{ width: '100%', maxWidth: '300px', borderRadius: '20px', marginBottom: '20px', boxShadow: 'var(--card-shadow)' }} />
+
         <h1 style={{ color: 'var(--primary)' }}>Skrining Asuhan Nifas 🩺</h1>
         <p style={{ color: 'var(--text-light)' }}>Jawablah pertanyaan berikut sesuai dengan kondisi yang Anda rasakan saat ini sejujur-jujurnya.</p>
       </div>

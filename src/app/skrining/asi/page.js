@@ -115,7 +115,7 @@ export default function ASIScreening() {
   return (
     <div className="animate-fade-in" style={{ maxWidth: '750px', margin: '0 auto' }}>
       <div className="text-center mb-4" style={{ padding: '20px', background: 'rgba(255, 255, 255, 0.3)', backdropFilter: 'blur(10px)', borderRadius: '20px', border: '1px solid rgba(255, 255, 255, 0.4)', boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.05)' }}>
-        <img src="/assets/asi.png" alt="Ilustrasi Menyusui" style={{ width: '100%', maxWidth: '300px', borderRadius: '20px', marginBottom: '20px', boxShadow: 'var(--card-shadow)' }} />
+
         <h1 style={{ color: 'var(--primary)' }}>Skrining Menyusui & ASI 🤱</h1>
         <p style={{ color: 'var(--text-light)', marginTop: '10px' }}>Apakah Anda mengalami kendala selama memberikan ASI? Yuk periksa dari gejalanya di bawah ini.</p>
       </div>

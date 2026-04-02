@@ -130,7 +130,7 @@ export default function MentalScreening() {
   return (
     <div className="animate-fade-in" style={{ maxWidth: '850px', margin: '0 auto' }}>
       <div className="text-center mb-4">
-        <img src="/assets/mental.png" alt="Ilustrasi Kesehatan Mental" style={{ width: '100%', maxWidth: '300px', borderRadius: '20px', marginBottom: '20px', boxShadow: 'var(--card-shadow)' }} />
+
         <h1 style={{ color: 'var(--primary)' }}>Skrining Postpartum Blues 🧠</h1>
         <p style={{ color: 'var(--text-light)' }}>Dalam kurun waktu tujuh hari (1 minggu) terakhir ini secara jujur, manakah skala di bawah ini yang paling mewakili tentang perasaan dan pemikiran diri anda selama ini?</p>
       </div>
