@@ -10,7 +10,7 @@ export const metadata = {
   keywords:
     "skrining nifas, skrining ASI, kesehatan ibu pasca melahirkan, skrining mandiri ibu, cek kondisi nifas, cek kondisi menyusui, skrining kesehatan mental ibu, perawatan ibu setelah melahirkan, pemantauan nifas, pemantauan ASI, kesehatan ibu menyusui, tips nifas sehat, pemeriksaan nifas, kesehatan mental pasca melahirkan, perawatan ASI ibu, pemeriksaan menyusui ibu, website skrining ibu, panduan nifas, skrining kesehatan ibu hamil, ibu setelah melahirkan",
   openGraph: {
-    url: 'https://nifascare.vercel.app',
+    url: 'https://nifashealthcare.vercel.app',
     siteName: "Nifas & ASI Check | Skrining Mandiri Ibu",
     title: "Nifas & ASI Check | Skrining Mandiri Ibu",
     description:
@@ -19,7 +19,7 @@ export const metadata = {
     type: "website",
     images: [
       {
-        url: `https://nifascare.vercel.app/assets/logo.png`,
+        url: `https://nifashealthcare.vercel.app/assets/logo.png`,
         width: 1080,
         height: 1080,
         alt: "Nifas & ASI Check | Skrining Mandiri Ibu",

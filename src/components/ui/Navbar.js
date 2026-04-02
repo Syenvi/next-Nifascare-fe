@@ -6,7 +6,7 @@ export default function Navbar() {
     <nav className="navbar">
       <div className="container nav-container">
         <Link href="/" className="logo">
-          Nifas <span className="logo-accent">& ASI Check</span>
+          Nifas <span className="logo-accent">Healthcare</span>
         </Link>
         <div className="nav-links">
           <Link href="/edukasi" className="btn hover-lift" style={{ backgroundColor: '#FEF7E0', color: '#B06000', padding: '8px 16px', fontSize: '0.9rem', border: '1px solid #FEEFC3' }}>💡 Edukasi</Link>
