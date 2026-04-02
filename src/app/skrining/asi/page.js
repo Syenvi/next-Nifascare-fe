@@ -16,6 +16,7 @@ const questions = [
 export default function ASIScreening() {
   const [answers, setAnswers] = useState({});
   const [result, setResult] = useState(null);
+  const [errorMsg, setErrorMsg] = useState("");
 
   const handleSelect = (idx, value) => {
     setAnswers(prev => ({ ...prev, [idx]: value }));
@@ -23,7 +24,7 @@ export default function ASIScreening() {
 
   const calculateResult = () => {
     if (Object.keys(answers).length < questions.length) {
-      alert('Mohon jawab semua pertanyaan terlebih dahulu.');
+      setErrorMsg('Mohon lengkapi semua isian terlebih dahulu.');
       return;
     }
 
@@ -162,6 +163,17 @@ export default function ASIScreening() {
           Lihat Hasil Skrining
         </button>
       </div>
+
+      {errorMsg && (
+        <div style={{ position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh', zIndex: 9999, display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'rgba(0,0,0,0.4)', backdropFilter: 'blur(5px)', WebkitBackdropFilter: 'blur(5px)' }}>
+          <div className="glass-card animate-fade-in" style={{ maxWidth: '400px', width: '90%', textAlign: 'center', padding: '30px' }}>
+            <div style={{ fontSize: '3rem', marginBottom: '15px' }}>⚠️</div>
+            <h3 style={{ marginBottom: '10px', color: 'var(--text-main)', fontSize: '1.5rem' }}>Perhatian</h3>
+            <p style={{ color: 'var(--text-light)', marginBottom: '25px', fontSize: '1.1rem' }}>{errorMsg}</p>
+            <button className="btn btn-primary hover-lift" onClick={() => setErrorMsg("")} style={{ width: '100%', padding: '12px' }}>Saya Mengerti</button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
