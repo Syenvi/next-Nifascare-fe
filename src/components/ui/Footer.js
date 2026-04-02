@@ -22,7 +22,7 @@ export default function Footer() {
       }}>
         {/* Left: Brand */}
         <div>
-          <h3 style={{ color: 'var(--primary)', marginBottom: '15px', fontSize: '1.5rem', fontWeight: '700' }}>Nifas & ASI Check</h3>
+          <h3 style={{ color: 'var(--primary)', marginBottom: '15px', fontSize: '1.5rem', fontWeight: '700' }}>Nifas &Healthcare</h3>
           <p style={{ color: 'var(--text-light)', lineHeight: '1.6', fontSize: '0.95rem' }}>
             Platform skrining mandiri terpadu untuk mengecek kondisi asuhan nifas, kelancaran menyusui (ASI), dan kesehatan mental ibu setelah melahirkan secara mudah, aman, dan cepat.
           </p>
@@ -48,8 +48,8 @@ export default function Footer() {
 
       {/* Bottom */}
       <div style={{ textAlign: 'center' }}>
-        <p style={{ fontSize: '0.95rem', color: 'var(--text-main)', fontWeight: '600', marginBottom: '15px' }}>
-          &copy; {new Date().getFullYear()} Nifas & ASI Check. Oleh Kolaborasi Mahasiswa Kebidanan & Tim IT.
+        <p style={{ fontSize: '0.95rem', color: 'var(--text-main)', fontWeight: '500', marginBottom: '15px' }}>
+          &copy; {new Date().getFullYear()} Nifas Healthcare. Oleh Kolaborasi Mahasiswa Kebidanan & Tim IT.
         </p>
         <div style={{
           marginTop: '10px',
