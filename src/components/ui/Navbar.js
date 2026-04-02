@@ -9,7 +9,8 @@ export default function Navbar() {
           Nifas <span className="logo-accent">& ASI Check</span>
         </Link>
         <div className="nav-links">
-          <Link href="/edukasi">Edukasi</Link>
+          <Link href="/edukasi" className="btn hover-lift" style={{ backgroundColor: '#FEF7E0', color: '#B06000', padding: '8px 16px', fontSize: '0.9rem', border: '1px solid #FEEFC3' }}>💡 Edukasi</Link>
+
           <Link href="/direktori" className="btn btn-primary btn-sm">Hubungi Nakes</Link>
         </div>
       </div>

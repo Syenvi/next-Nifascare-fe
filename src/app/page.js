@@ -3,28 +3,28 @@ import Link from 'next/link';
 export default function Home() {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '40px', alignItems: 'center' }}>
-      
+
       {/* Hero Section */}
       <section className="text-center animate-fade-in" style={{ maxWidth: '600px', marginTop: '20px' }}>
         <h1 style={{ fontSize: '2.5rem', marginBottom: '16px', color: 'var(--primary)' }}>
           Halo Ibu, Bagaimana Kabar Anda Hari Ini?
         </h1>
         <p style={{ fontSize: '1.1rem', color: 'var(--text-light)', marginBottom: '30px' }}>
-          Mari kenali kondisi kesehatan Anda setelah melahirkan dan proses menyusui secara mandiri, aman, dan rahasia. 
+          Mari kenali kondisi kesehatan Anda setelah melahirkan dan proses menyusui secara mandiri, aman, dan rahasia.
         </p>
       </section>
 
       {/* Skrining Selection Grid */}
       <section style={{ width: '100%' }}>
         <h2 className="text-center mb-4" style={{ fontSize: '1.75rem', fontWeight: 600 }}>Pilih Kategori Skrining</h2>
-        
-        <div style={{ 
-          display: 'grid', 
-          gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', 
+
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
           gap: '20px',
           width: '100%'
         }}>
-          
+
           {/* Card 1: Nifas */}
           <div className="glass-card hover-lift" style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
             <div style={{ fontSize: '2.5rem' }}>🩺</div>
@@ -78,13 +78,6 @@ export default function Home() {
           </Link>
         </div>
       </section>
-
-      {/* Decorative Wave Footer */}
-      <div style={{ position: 'absolute', bottom: 0, left: 0, width: '100%', overflow: 'hidden', lineHeight: 0, zIndex: -1 }}>
-        <svg viewBox="0 0 1200 120" preserveAspectRatio="none" style={{ position: 'relative', display: 'block', width: 'calc(100% + 1.3px)', height: '150px' }}>
-          <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C54,115.5,123.6,118.8,187.3,109.1C234.3,101.9,280.9,89.3,321.39,56.44Z" style={{ fill: 'rgba(255,255,255,0.4)' }}></path>
-        </svg>
-      </div>
 
     </div>
   );
