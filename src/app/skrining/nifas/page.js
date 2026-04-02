@@ -64,7 +64,7 @@ export default function NifasScreening() {
         <h2 className="text-center mb-4">Hasil Skrining Asuhan Nifas</h2>
         
         <div style={{ position: 'relative', width: '100%', aspectRatio: '4/3', borderRadius: '16px', overflow: 'hidden', marginBottom: '25px', boxShadow: '0 4px 15px rgba(0,0,0,0.1)' }}>
-          <Image src="/assets/nifas.png" alt="Ilustrasi Hasil" fill style={{ objectFit: 'cover' }} />
+          <Image src={`/assets/nifas-${result.status === 'danger' ? 'bahaya' : result.status === 'warning' ? 'perlu-perhatian' : 'normal'}.png`} alt="Ilustrasi Hasil" fill style={{ objectFit: 'cover' }} />
         </div>
         
         {result.status === 'normal' && (
